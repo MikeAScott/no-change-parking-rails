@@ -1,9 +1,5 @@
 Given(/^The following payments list $/) do |table|
   ActiveCucumber.create_many Payment, table
-#  table.hashes.each do |item|
-#    payment = FactoryGirl.build(:payment, vehicle: item['Vehicle'])
-#    payment.save
-#  end
 end
 
 When(/^We get a new call from driver 'Dave'$/) do
@@ -11,7 +7,7 @@ When(/^We get a new call from driver 'Dave'$/) do
 end
 
 When(/^He pays to park "([^"]*)" with (.*)$/) do |vehicle, payment_type|
-  FactoryGirl.create :payment, vehicle: vehicle
+ FactoryGirl.create :payment, vehicle: vehicle
 end
 
 Then(/^the payment should be accepted$/) do
